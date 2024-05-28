@@ -174,6 +174,12 @@ const storage = {
 function scroll(element) {
     element.scrollIntoView({ behavior: 'smooth' });
 }
+function scrollTop() {
+    window.scrollTo({
+        top:0,
+        behavior: "smooth"
+    });
+}
 
 function limit(fn, wait) {
     let time = Date.now();
