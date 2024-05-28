@@ -73,7 +73,7 @@ function show(element, display = '') {
     element.style.display = display;
 }
 
-function toggleVisibility(element, display = "") {
+function toggle(element, display = "") {
     if (window.getComputedStyle(element).display === 'none') {
         show(element, display);
     } else {
@@ -206,3 +206,59 @@ const script = {
         document.head.appendChild(script);
     }
 }
+
+const url = {
+    get: function getQueryParams() {
+        const params = {};
+        const queryString = window.location.search.slice(1);
+        queryString.split('&').forEach(param => {
+            const [key, value] = param.split('=');
+            params[key] = decodeURIComponent(value);
+        });
+        return params;
+    },
+    set: function setQueryParams(params) {
+        const queryString = Object.keys(params).map(key => {
+            return `${encodeURIComponent(key)}=${encodeURIComponent(params[key])}`;
+        }).join('&');
+        history.replaceState(null, '', '?' + queryString);
+    }
+}
+
+const gen = {
+    hex: function generateRandomHex(length = 8) {
+        const characters = 'abcdef0123456789';
+        let result = '';
+
+        for (let i = 0; i < length; i++) {
+            const randomIndex = Math.floor(Math.random() * characters.length);
+            result += characters.charAt(randomIndex);
+        }
+
+        return result;
+    },
+    num: function generateRandomDecimal(length = 8) {
+        const characters = '0123456789';
+        let result = '';
+
+        for (let i = 0; i < length; i++) {
+            const randomIndex = Math.floor(Math.random() * characters.length);
+            result += characters.charAt(randomIndex);
+        }
+
+        return parseInt(result); // Konvertujeme řetězec na číslo
+    },
+    abc: function generateRandomLetterId(length = 8) {
+        const alphabet = 'abcdefghijklmnopqrstuvwxyz';
+        let result = '';
+
+        for (let i = 0; i < length; i++) {
+            const randomIndex = Math.floor(Math.random() * alphabet.length);
+            result += alphabet.charAt(randomIndex);
+        }
+
+        return result;
+    }
+}
+
+
