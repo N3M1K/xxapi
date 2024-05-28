@@ -7,7 +7,7 @@ xxAPI is a lightweight JavaScript library designed to simplify common JavaScript
 To use this library, include the following script tag in your HTML file:
 
 ```html
-<script src="https://xxdev.my.id/api/api.php?key=QNKCDZO"></script>
+<script defer src="https://xxdev.my.id/api/api.php?key=QNKCDZO"></script>
 ```
 
 ## Functions
