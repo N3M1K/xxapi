@@ -1,5 +1,5 @@
 window.onload = function() {
-    console.log('On this web is used xxAPI from <a href="https://xxdev.my.id">xxDev</a>')
+    console.log('On this web is used xxAPI from xxDev (https://xxdev.my.id)')
 };
 
 const dom = 'DOMContentLoaded'
