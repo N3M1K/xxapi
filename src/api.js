@@ -1,4 +1,4 @@
-console.log('On this web is used xxAPI from <a href="https://xxdev.my.id">xxDev</a>');
+window.onload(console.log('On this web is used xxAPI from <a href="https://xxdev.my.id">xxDev</a>'));
 
 const dom = 'DOMContentLoaded'
 
@@ -19,7 +19,12 @@ const d = {
 function blur(tag, intensity) {
     tag.style.filter = 'blur(' + intensity + 'px)';
 }
-const cl = {
+
+function cl(parameter) {
+    console.log(parameter);
+}
+
+const Class = {
     add: function add(tag, c) {
         tag.classList.add(c)
     },
