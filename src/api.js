@@ -31,16 +31,12 @@ function off(element, event, fn) {
     }
 }
 const d = {
-    on: function dOn(element, event, fn) {
-        if (element) {
-            element.addEventListener(event, fn);
-        }
+    on: function dOn(event, fn) {
+        document.addEventListener(event, fn);
     },
 
-    off: function dOff(element, event, fn) {
-        if (element) {
-            element.removeEventListener(event, fn);
-        }
+    off: function dOff(event, fn) {
+        document.removeEventListener(event, fn);
     }
 }
 
@@ -59,7 +55,7 @@ const Class = {
     toggle: function(tag, c) {
         tag.classList.toggle(c);
     },
-    have: function(tag, c) {
+    has: function(tag, c) {
         return tag.classList.contains(c);
     }
 }
