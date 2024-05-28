@@ -261,7 +261,7 @@ ready(function() {
 
 ## Support
 
-For any issues or questions regarding xxAPI, please visit [xxDev Support](https://xxdev.my.id/support) or contact us at support@xxdev.my.id.
+For any issues or questions regarding xxAPI, please contact us at contact@xxdev.my.id.
 
 ## License
 
