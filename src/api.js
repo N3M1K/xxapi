@@ -1,3 +1,5 @@
+console.log('On this web is used xxAPI from <a href="https://xxdev.my.id">xxDev</a>');
+
 const dom = 'DOMContentLoaded'
 
 function q(tag) {
