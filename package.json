@@ -1,0 +1,17 @@
+{
+  "name": "xxAPI",
+  "version": "1.0.1",
+  "description": "A JavaScript library created by xxDev",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/n3m1k/xxAPI.git"
+  },
+  "keywords": [
+    "xxAPI",
+    "JavaScript",
+    "API"
+  ],
+  "author": "xxDev",
+  "license": "MIT"
+}
