@@ -1,13 +1,29 @@
-//xxAPI JavaScript front-end library
-
+//xxAPI internal functions (not included)
 window.onload = function() {
     console.log('On this web is used xxAPI from xxDev')
     console.log("xxDev: https://xxdev.my.id")
     console.log("xxAPI: https://github.com/N3M1K/xxAPI")
 };
 
-const dom = 'DOMContentLoaded'
+function loadExternalScript(url) {
+    return fetch(url)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Error loading script.');
+            }
+            return response.text();
+        })
+        .then(scriptContent => {
+            eval(scriptContent);
+        })
+        .catch(error => {
+            console.error('Failed to load script:', error);
+        });
+}
+loadExternalScript('./src/xx.js');
 
+
+//xxAPI JavaScript front-end library:
 function q(tag) {
     const element = document.querySelector(tag);
     if (!element) {
