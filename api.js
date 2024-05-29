@@ -1,15 +1,24 @@
 //xxAPI JavaScript front-end library
+
+window.onload = function() {
+    console.log('On this web is used xxAPI from xxDev')
+    console.log("xxDev: https://xxdev.my.id")
+    console.log("xxAPI: https://github.com/N3M1K/xxAPI")
+};
+
+const dom = 'DOMContentLoaded'
+
 function q(tag) {
     const element = document.querySelector(tag);
     if (!element) {
-        console.warn(`Element ${tag} nenalezen.`);
+        console.warn(`Element ${tag} has not been founded.`);
     }
     return element;
 }
 function qa(tag) {
     const elements = document.querySelectorAll(tag);
     if (elements.length === 0) {
-        console.warn(`Elementy ${tag} nenalezeny.`);
+        console.warn(`Elements ${tag} have not been founded.`);
     }
     return elements;
 }
