@@ -1,11 +1,4 @@
-window.onload = function() {
-    console.log('On this web is used xxAPI from xxDev')
-    console.log("xxDev: https://xxdev.my.id")
-    console.log("xxAPI: https://github.com/N3M1K/xxAPI")
-};
-
-const dom = 'DOMContentLoaded'
-
+//xxAPI JavaScript front-end library
 function q(tag) {
     const element = document.querySelector(tag);
     if (!element) {
@@ -174,6 +167,7 @@ const storage = {
 function scroll(element) {
     element.scrollIntoView({ behavior: 'smooth' });
 }
+
 function scrollTop() {
     window.scrollTo({
         top:0,
@@ -262,5 +256,3 @@ const gen = {
         return result;
     }
 }
-
-
