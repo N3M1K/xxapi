@@ -1,9 +1,10 @@
-//xxAPI internal functions (not included)
+//COPYRIGHT start
 window.onload = function() {
     console.log('On this web is used xxAPI from xxDev')
     console.log("xxDev: https://xxdev.my.id")
-    console.log("xxAPI: https://github.com/N3M1K/xxAPI")
+    console.log("xxAPI: https://github.com/N3M1K/xxapi")
 };
+//COPYRIGHT end
 
 
 //xxAPI JavaScript front-end library:
