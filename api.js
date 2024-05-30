@@ -5,8 +5,6 @@ window.onload = function() {
     console.log("xxAPI: https://github.com/N3M1K/xxAPI")
 };
 
-document.querySelector("body").innerHTML += '<div id="xxAPIscripts"><script src="/xxapi/src/xx.js"></script></div>';
-
 
 //xxAPI JavaScript front-end library:
 function q(tag) {
@@ -266,3 +264,7 @@ const gen = {
         return result;
     }
 }
+
+const xx = {
+
+};
