@@ -26,7 +26,7 @@ Welcome to the documentation for xxAPI, a JavaScript frontend library developed 
 To use xxAPI in your web project, follow these steps:
 
 1. **Download the `xxapi` folder:**
-   Download the `xxapi` folder from `releases` and include it in your web project.
+   Download the folder from `releases` and include it in your web project.
 
 2. **Include the xxAPI script:**
    Add the following script tag to the `<head>` element of your HTML file, adjusting the `src` attribute to the correct path:
