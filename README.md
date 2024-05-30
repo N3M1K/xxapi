@@ -287,23 +287,6 @@ Once you have included the xxAPI script, you can use its functions as described 
   - **Parameters:**
     - `length` (number): The length of the generated string (default is 8).
   - **Returns:** A random string of letters.
- 
-### xx.js
-
-xx.js contains additional functionality for script loading and file mapping.
-
-- **`xx.load(name)`**
-  - **Description:** Loads a script by its name, as defined in the file mappings.
-  - **Parameters:**
-    - `name` (string): The name of the script to load.
-  - **Returns:** A promise that resolves when the script is loaded and evaluated.
-
-- **`xx.addFile(name, filePath)`**
-  - **Description:** Adds a new file mapping to the xx object.
-  - **Parameters:**
-    - `name` (string): The name of the script.
-    - `filePath` (string): The path to the script file.
-  - **Returns:** None.
 
 ### Example Usage
 
