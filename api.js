@@ -5,22 +5,7 @@ window.onload = function() {
     console.log("xxAPI: https://github.com/N3M1K/xxAPI")
 };
 
-function loadExternalScript(url) {
-    return fetch(url)
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Error loading script.');
-            }
-            return response.text();
-        })
-        .then(scriptContent => {
-            eval(scriptContent);
-        })
-        .catch(error => {
-            console.error('Failed to load script:', error);
-        });
-}
-loadExternalScript('./src/xx.js');
+document.querySelector("body").innerHTML += '<div id="xxAPIscripts"><script src="/xxapi/src/xx.js"></script></div>';
 
 
 //xxAPI JavaScript front-end library:
