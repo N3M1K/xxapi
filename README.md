@@ -32,7 +32,7 @@ To use xxAPI in your web project, follow these steps:
    Add the following script tag to the `<head>` element of your HTML file, adjusting the `src` attribute to the correct path:
 
    ```html
-   <script defer src="/path/to/xxapi/api.js"></script>
+   <script src="/path/to/xxapi/api.js"></script>
    ```
 
 ## Usage
