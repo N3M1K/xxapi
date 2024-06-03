@@ -57,14 +57,14 @@ Once you have included the xxAPI script, you can use its functions as described 
 
 ### Event Handling
 
-- **`on(element, event, fn)`**
+- **`element.on(event, fn)`**
   - **Description:** Attaches an event listener to the specified element.
   - **Parameters:**
     - `element` (Element): The target element.
     - `event` (string): The event type (e.g., 'click').
     - `fn` (function): The event handler function.
 
-- **`off(element, event, fn)`**
+- **`element.off(event, fn)`**
   - **Description:** Removes an event listener from the specified element.
   - **Parameters:**
     - `element` (Element): The target element.
@@ -85,13 +85,13 @@ Once you have included the xxAPI script, you can use its functions as described 
 
 ### Class Manipulation
 
-- **`Class.add(tag, ...classes)`**
+- **`element.Class.add(...classes)`**
   - **Description:** Adds one or more classes to the specified element.
   - **Parameters:**
     - `tag` (Element): The target element.
     - `...classes` (string): One or more class names to add.
 
-- **`Class.remove(tag, ...classes)`**
+- **`element.Class.remove(...classes)`**
   - **Description:** Removes one or more classes from the specified element.
   - **Parameters:**
     - `tag` (Element): The target element.
@@ -103,7 +103,7 @@ Once you have included the xxAPI script, you can use its functions as described 
     - `tag` (Element): The target element.
     - `c` (string): The class name to toggle.
 
-- **`Class.has(tag, c)`**
+- **`element.Class.has(c)`**
   - **Description:** Checks if the specified element has the given class.
   - **Parameters:**
     - `tag` (Element): The target element.
@@ -112,18 +112,18 @@ Once you have included the xxAPI script, you can use its functions as described 
 
 ### Element Visibility
 
-- **`hide(element)`**
+- **`element.hide`**
   - **Description:** Hides the specified element.
   - **Parameters:**
     - `element` (Element): The target element.
 
-- **`show(element, display = '')`**
+- **`element.show(display = '')`**
   - **Description:** Shows the specified element.
   - **Parameters:**
     - `element` (Element): The target element.
     - `display` (string): The display value to use (default is '').
 
-- **`toggle(element, display = "")`**
+- **`element.toggle(display = "")`**
   - **Description:** Toggles the visibility of the specified element.
   - **Parameters:**
     - `element` (Element): The target element.
@@ -136,25 +136,34 @@ Once you have included the xxAPI script, you can use its functions as described 
   - **Parameters:**
     - `fn` (function): The function to execute.
 
-- **`create(tag, id = '', classes = [], children = [])`**
+- **`create(tag, id = '', ...classes)`**
   - **Description:** Creates a new element with specified attributes and children.
   - **Parameters:**
     - `tag` (string): The tag name of the element.
     - `id` (string): The ID of the element.
-    - `classes` (Array): An array of class names.
-    - `children` (Array): An array of child elements to append.
+    - `...classes`: A class name/classes names.
   - **Returns:** The created element.
 
-- **`remove(element)`**
+- **`element.remove`**
   - **Description:** Removes the specified element from the DOM.
   - **Parameters:**
     - `element` (Element): The element to remove.
 
-- **`copy(element)`**
+- **`element.copy`**
   - **Description:** Creates a deep copy of the specified element.
   - **Parameters:**
     - `element` (Element): The element to copy.
   - **Returns:** The copied element.
+
+- **`element.print`**
+  - **Description:** change innerHTML of element.
+  - **Parameters:**
+    - `element` (Element): The element to edit.
+
+- **`element.append`**
+  - **Description:** add html to element.
+  - **Parameters:**
+    - `element` (Element): The element to edit.
 
 ### AJAX Requests
 
