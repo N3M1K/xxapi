@@ -1,4 +1,4 @@
-MIT License with No Commercial Use Clause
+MIT License with No Commercial Use Clause and Code Modification Restriction
 
 Copyright (c) 2024 xxDev
 
@@ -25,3 +25,6 @@ software in source and binary forms, with or without modification, are not
 permitted for commercial purposes, including but not limited to sale, resale,
 licensing, leasing, or sub-licensing. For commercial use, please contact the
 author for licensing options.
+
+Modification of the code between "//COPYRIGHT start" and "//COPYRIGHT end" is prohibited
+without explicit permission from the author.

@@ -8,30 +8,53 @@ window.onload = function() {
 
 
 //xxAPI JavaScript front-end library:
-function q(tag) {
-    const element = document.querySelector(tag);
-    if (!element) {
-        console.warn(`Element ${tag} has not been founded.`);
+
+Element.prototype.on = function(event, fn) {
+    this.addEventListener(event, fn);
+};
+
+
+Element.prototype.off = function(event, fn) {
+    this.removeEventListener(event, fn);
+};
+
+
+Element.prototype.print = function(content) {
+    this.innerHTML = content;
+};
+
+
+Element.prototype.append = function(content) {
+    this.innerHTML += content;
+};
+
+
+Element.prototype.hide = function() {
+    this.style.display = 'none';
+};
+
+Element.prototype.show = function(display = '') {
+    this.style.display = display;
+};
+
+Element.prototype.toggle = function(display = "") {
+    if (window.getComputedStyle(this).display === 'none') {
+        this.show(display);
+    } else {
+        this.hide();
     }
-    return element;
+};
+
+
+function q(selector) {
+    return document.querySelector(selector);
 }
-function qa(tag) {
-    const elements = document.querySelectorAll(tag);
-    if (elements.length === 0) {
-        console.warn(`Elements ${tag} have not been founded.`);
-    }
-    return elements;
+
+function qa(selector) {
+    return document.querySelectorAll(selector);
 }
-function on(element, event, fn) {
-    if (element) {
-        element.addEventListener(event, fn);
-    }
-}
-function off(element, event, fn) {
-    if (element) {
-        element.removeEventListener(event, fn);
-    }
-}
+
+
 const d = {
     on: function dOn(event, fn) {
         document.addEventListener(event, fn);
@@ -40,70 +63,49 @@ const d = {
     off: function dOff(event, fn) {
         document.removeEventListener(event, fn);
     }
-}
+};
 
 function cl(parameter) {
     console.log(parameter);
 }
 
-
-const Class = {
-    add: function(tag, ...classes) {
-        tag.classList.add(...classes);
+Element.prototype.Class = {
+    add: function(...classes) {
+        this.classList.add(...classes);
     },
-    remove: function(tag, ...classes) {
-        tag.classList.remove(...classes);
+    remove: function(...classes) {
+        this.classList.remove(...classes);
     },
-    toggle: function(tag, c) {
-        tag.classList.toggle(c);
+    toggle: function(c) {
+        this.classList.toggle(c);
     },
-    has: function(tag, c) {
-        return tag.classList.contains(c);
+    has: function(c) {
+        return this.classList.contains(c);
     }
-}
+};
 
 
-function hide(element) {
-    element.style.display = 'none';
-}
-
-function show(element, display = '') {
-    element.style.display = display;
-}
-
-function toggle(element, display = "") {
-    if (window.getComputedStyle(element).display === 'none') {
-        show(element, display);
-    } else {
-        hide(element);
-    }
-}
-
-function ready(fn) {
-    if (document.readyState !== 'loading') {
-        fn();
-    } else {
-        document.addEventListener('DOMContentLoaded', fn);
-    }
-}
-
-function create(tag, id = '', classes = [], children = []) {
+function create(tag, id = '', ...classes) {
     const element = document.createElement(tag);
     if (id) {
         element.id = id;
     }
-    if (Array.isArray(classes) && classes.length > 0) {
+    if (classes.length > 0) {
         element.classList.add(...classes);
     }
-    children.forEach(child => element.appendChild(child));
     return element;
-}
-function remove(element) {
-    element.parentNode.removeChild(element);
-}
-function copy(element) {
-    return element.cloneNode(true);
-}
+};
+
+Element.prototype.remove = function() {
+    if (this.parentNode) {
+        this.parentNode.removeChild(this);
+    }
+};
+
+Element.prototype.copy = function() {
+    return this.cloneNode(true);
+};
+
 
 const ajax = {
     get: function ajaxGet(url) {
@@ -133,8 +135,7 @@ const ajax = {
         }).then(response => response.json())
           .catch(error => console.error('Error:', error));
     }
-}
-
+};
 
 const cookies = {
     set: function(name, value, days) {
@@ -159,7 +160,7 @@ const cookies = {
     erase: function(name) {
         document.cookie = name + '=; Max-Age=-99999999;';
     }
-}
+};
 
 const storage = {
     get: function(key) {
@@ -171,7 +172,7 @@ const storage = {
     remove: function(key) {
         localStorage.removeItem(key);
     }
-}
+};
 
 function scroll(element) {
     element.scrollIntoView({ behavior: 'smooth' });
@@ -210,7 +211,7 @@ const script = {
         script.onload = callback;
         document.head.appendChild(script);
     }
-}
+};
 
 const url = {
     get: function getQueryParams() {
@@ -228,9 +229,9 @@ const url = {
         }).join('&');
         history.replaceState(null, '', '?' + queryString);
     }
-}
+};
 
-const gen = {
+const xx = {
     hex: function generateRandomHex(length = 8) {
         const characters = 'abcdef0123456789';
         let result = '';
@@ -264,8 +265,4 @@ const gen = {
 
         return result;
     }
-}
-
-const xx = {
-
 };
