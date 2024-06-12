@@ -7,27 +7,23 @@ window.onload = function() {
 //COPYRIGHT end
 
 
-//xxAPI JavaScript front-end library:
+// xxAPI JavaScript front-end library:
 
 Element.prototype.on = function(event, fn) {
     this.addEventListener(event, fn);
 };
 
-
 Element.prototype.off = function(event, fn) {
     this.removeEventListener(event, fn);
 };
-
 
 Element.prototype.print = function(content) {
     this.innerHTML = content;
 };
 
-
 Element.prototype.append = function(content) {
     this.innerHTML += content;
 };
-
 
 Element.prototype.hide = function() {
     this.style.display = 'none';
@@ -45,7 +41,6 @@ Element.prototype.toggle = function(display = "") {
     }
 };
 
-
 function q(selector) {
     return document.querySelector(selector);
 }
@@ -54,12 +49,10 @@ function qa(selector) {
     return document.querySelectorAll(selector);
 }
 
-
 const d = {
     on: function dOn(event, fn) {
         document.addEventListener(event, fn);
     },
-
     off: function dOff(event, fn) {
         document.removeEventListener(event, fn);
     }
@@ -84,7 +77,6 @@ Element.prototype.Class = {
     }
 };
 
-
 function create(tag, id = '', ...classes) {
     const element = document.createElement(tag);
     if (id) {
@@ -94,7 +86,7 @@ function create(tag, id = '', ...classes) {
         element.classList.add(...classes);
     }
     return element;
-};
+}
 
 Element.prototype.remove = function() {
     if (this.parentNode) {
@@ -105,7 +97,6 @@ Element.prototype.remove = function() {
 Element.prototype.copy = function() {
     return this.cloneNode(true);
 };
-
 
 const ajax = {
     get: function ajaxGet(url) {
@@ -180,7 +171,7 @@ function scroll(element) {
 
 function scrollTop() {
     window.scrollTo({
-        top:0,
+        top: 0,
         behavior: "smooth"
     });
 }
@@ -266,3 +257,79 @@ const xx = {
         return result;
     }
 };
+
+function getData(form) {
+    const data = new FormData(form);
+    const obj = {};
+    data.forEach((value, key) => {
+        if (obj[key] !== undefined) {
+            if (!Array.isArray(obj[key])) {
+                obj[key] = [obj[key]];
+            }
+            obj[key].push(value);
+        } else {
+            obj[key] = value;
+        }
+    });
+    return obj;
+}
+
+Element.prototype.css = function(property, value) {
+    if (value === undefined) {
+        return getComputedStyle(this).getPropertyValue(property);
+    } else {
+        this.style[property] = value;
+    }
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function transpile() {
+    const xscripts = qa('xscript');
+    if (xscripts) {
+        xscripts.forEach(script => {
+            const scriptElement = create('script');
+            document.body.appendChild(scriptElement);
+
+            const src = script.getAttribute('src') || "";
+            if (src.length > 0) {
+                fetch(src)
+                    .then(response => response.text())
+                    .then(data => {
+                        scriptElement.innerHTML = transpileToJavaScript(data);
+                    })
+                    .catch(error => console.error('Error fetching file:', error));
+            } else {
+                scriptElement.innerHTML = transpileToJavaScript(script.innerHTML);
+            }
+        });
+    }
+}
+
+function transpileToJavaScript(code) {
+    // Nahrazení klíčových slov ze souboru *.xx
+    return code.replace(/\bl\b/g, 'let')
+               .replace(/\bc\b/g, 'const')
+               .replace(/\bfn\b/g, 'function');
+}
+
+// Spuštění transpilace po načtení DOM
+document.addEventListener('DOMContentLoaded', transpile);
