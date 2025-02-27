@@ -35,17 +35,6 @@ To use xxAPI in your web project, follow these steps:
    <script src="path/to/xxapi.js"></script>
    ```
 
-## Usage
-
-To use xxAPI in your project, simply include the script file as described in the installation section. xxAPI supports xscript, a lightly modified version of JavaScript with `.xs` file extensions. You can include xscript files using the `<xscript>` tag.
-
-```html
-<xscript src="path/to/script.xs"></xscript>
-
-<xscript>
-    // xscript code here
-</xscript>
-```
 
 ## API Reference
 
