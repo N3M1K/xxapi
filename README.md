@@ -5,8 +5,7 @@ Welcome to the documentation for xxAPI, a JavaScript frontend library developed 
 ## Table of Contents
 
 1. [Installation](#installation)
-2. [Usage](#usage)
-3. [API Reference](#api-reference)
+2. [API Reference](#api-reference)
     - [Element Selection](#element-selection)
     - [Event Handling](#event-handling)
     - [Class Manipulation](#class-manipulation)
